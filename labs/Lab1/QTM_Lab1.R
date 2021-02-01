@@ -1,15 +1,15 @@
-#################################
+#################
 # Lab 1: How R and GitHub work
-#################################
+#################
 
-## Goal:
+# Goal:
 # 1. Calculate simple arithmetic
 # 2. Assign a value to an object
 # 3. Types of Data
 
-##################
-## 1 What is R?
-##################
+#########
+# 1 What is R?
+#########
 
 # Data analysis software
 # A programming language
@@ -17,17 +17,17 @@
 # a community of over 2 million users
 
 
-## 1.1: Install R
+# 1.1: Install R
 # http://cran.r-project.org/bin/
 # I recommend using R studio because it provides a more user-friendly environment
 # Download from here: http://www.rstudio.com/
 
 
-## 1.2: Basics
+# 1.2: Basics
 # It is possible to do some things using the menus, but we will mostly use command line entry.
 # Don't be scared!
 
-## Layout (Four windows):
+# Layout (Four windows):
 # Editor: Top left window. This is where you type R code to solve the exercises in this course.
 # Console: Bottom left window. The output of your code is displayed.
 # Workspace: Top right window. You can see a history of your commands and see all active objects.
@@ -35,7 +35,7 @@
 # Show some of the graphics that R can produce
 demo("graphics")
 
-## Running R code
+# Running R code
 # To send a line of code to your console, use either 
 # (PC users:) "control + enter"
 # (Mac users:) "command + return"
@@ -43,12 +43,12 @@ demo("graphics")
 # You can also use "Run" button to execute a single line of code and "Source" button to execute all the codes.
 print("Hello world")
 
-## Commenting
+# Commenting
 # Anything that comes after a "#" sign.
 # Comments describe what the code is doing.
 # I try very hard to use descriptive comments
 
-## Features
+# Features
 # Everything in R is object oriented. Data, functions, inputs and outputs will all be data objects.
 # R is case sensitive. For that matter, it is also spelling sensitive.
 # R is an open-source platform that comes with many basic functions.
@@ -56,7 +56,7 @@ print("Hello world")
 # A community of over 2 million users; write handouts for class, write websites, etc.
 
 
-## 1.3: R as a calculator
+# 1.3: R as a calculator
 # Basic arithmetic
 # addition
 2 + 3
@@ -84,9 +84,9 @@ log(10)
 2*(3-4)+2
 2*(3-4)+2*(4 + 3)^(1/3)
 
-#########
+#####
 # Task 1:
-#########
+#####
 
 # Calculate 67 + 6
 
@@ -100,11 +100,11 @@ NULL # Nothing.
 1/0 # Inf means infinity
 
 
-### Note: Use the up and down arrows 
+## Note: Use the up and down arrows 
 # in the "Console" to access previously typed commands
 
 
-## 1.4: Objects and named storage
+# 1.4: Objects and named storage
 # The "<-" and "=" symbols are used to assign a variable to a value.
 # My personal preference is "<-".
 # Create a and b that take on the values of 7 and 8.
@@ -123,7 +123,7 @@ c <- 30
 a + b + c
 
 # Object names cannot start with numbers!!
-06election <-50000 ## no
+06election <-50000 # no
 
 # You can overide previous code by assigning altenative values.
 y <- 3
@@ -157,7 +157,7 @@ x <- c(1,4,9)
 
 # Assign the value 100 to x
 
-## more example: turnout in Alaska
+# more example: turnout in Alaska
 total.votes.ak <-  238307
 voting.age.population.ak <- 496387
 turnout.ak <-total.votes.ak/voting.age.population.ak
@@ -171,37 +171,37 @@ turnout.ak
 # 2) Add these two variables together
 
 
-## Named objects are stored in the "global environment", 
+# Named objects are stored in the "global environment", 
 # which means that they can be accessed at any time by any function you might run.
-## They are "global" variables (which makes them different from "local" variables).
+# They are "global" variables (which makes them different from "local" variables).
 
 objects() # List the objects currently on your global
 # equivalent to
 ls()
 
-## you can also remove objects
+# you can also remove objects
 QPM <- 100
 ls()
 rm(QPM)
 # equivalent to
 remove(QPM)
 
-## more example:
+# more example:
 ls()
 LabA <- LabB <- LabC <- 100
 ls()
 rm(list=c("LabA", "LabB"))
 objects()
 
-## combine them to remove everything
+# combine them to remove everything
 rm(list=ls())
 
-## Some things are present in the working environment, but not shown
+# Some things are present in the working environment, but not shown
 .x<-"Hide me"
 print(.x)
 ls()
 
-## Note: anything that starts with a "." will be there, but are hidden
+# Note: anything that starts with a "." will be there, but are hidden
 
 # Best way to remove everything: start a new R session by quiting Rstudio
 
@@ -228,7 +228,7 @@ detachAllPackages()
 # 2) Remove those objects
 
 
-## 1.5: Types of Data
+# 1.5: Types of Data
 # three data types: numeric, character, and logical	
 
 # numeric are numbers
@@ -247,14 +247,28 @@ logic <- TRUE
 logic
 
 
-## 1.6: Saving R script
+# 1.6: Saving R script
 
-## Save your code as a script using a ".R" file extension to a specific folder.
-## The file that you are reading now is the code file, usually saved with a .R extension.
-## I will need your .R files for problem sets so that I can replicate your work.
+# Save your code as a script using a ".R" file extension to a specific folder.
+# The file that you are reading now is the code file, usually saved with a .R extension.
+# I will need your .R files for problem sets so that I can replicate your work.
 
-####################
-## 2 What is GitHub?
-####################
+##########################
+# Part 2: 
+# Doing Problems Sets in R
+##########################
 
+# What is GitHub?
 # https://programminghistorian.org/en/lessons/getting-started-with-github-desktop
+
+# The first thing that you need are the .R and .tex files
+# https://github.com/jeffreyziegler/QTM200Spring2021/tree/main/problem_sets
+
+# Once you have downloaded both files into the same 
+# working directory, you should create duplicates with new names
+# like "PS1_my_answers.R"
+
+# Now, you can open up "PS1_my_answers.R" and "PS_my_answers.tex"
+# and begin to edit with your answers in 
+# Rstudio and Texstudio
+
